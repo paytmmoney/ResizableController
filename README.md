@@ -25,7 +25,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 source 'git@github.com:paytmmoney/ResizableController.git'
 
-pod "ResizableController"
+pod 'ResizableController'
 ```
 
 ### Swift Package Manager
