@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files = "ResizableController/**/*.{swift,h}"
   spec.homepage = "https://rupee.paytmmoney.com/ios/ResizableController"
-  spec.source = { :git => "git@rupee.paytmmoney.com:ios/ResizableController.git",
+  spec.source = { :git => "git@github.com:paytmmoney/ResizableController.git",
 :branch => 'dev/0.1' }
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
