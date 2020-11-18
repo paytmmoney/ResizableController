@@ -17,25 +17,45 @@ class ResizableControllerUnitTests: XCTestCase {
 
     func testResizableControllerPositionHandlerDelegate() throws {
         panHandler = ResizableControllerObserver(in: presentedResizableVC.onView, duration: 0.3, delegate: presentedResizableVC)
-        XCTAssertEqual(500, panHandler?.estimatedInitialTopOffset)
-        XCTAssertEqual(ResizableConstants.maximumTopOffset, panHandler?.estimatedFinalTopOffset)
-        XCTAssertEqual(UIColor.darkGray.withAlphaComponent(0.5), panHandler?.delegate?.sliderBackgroundColor)
+        // test for custom initial top offset updated on client end
+        XCTAssertEqual(presentedResizableVC.initialTopOffset, panHandler?.estimatedInitialTopOffset)
+
+        // test for maximum top offset updated on client end
+        XCTAssertEqual(presentedResizableVC.finalTopOffset, panHandler?.estimatedFinalTopOffset)
+
+        // test for updated sliderbar colour on client end
+        XCTAssertEqual(presentedResizableVC.sliderBackgroundColor, panHandler?.delegate?.sliderBackgroundColor)
     }
 
     func testFixedSizeControllerPositionHandlerDelegate() throws {
         panHandler = ResizableControllerObserver(in: presentedResizableVC.onView, duration: 0.3, delegate: presentedFixedSizeVC)
-        XCTAssertEqual(ResizableConstants.maximumTopOffset, panHandler?.estimatedInitialTopOffset)
-        XCTAssertEqual(ResizableConstants.maximumTopOffset, panHandler?.estimatedFinalTopOffset)
-        XCTAssertEqual(UIColor.darkGray.withAlphaComponent(0.5), panHandler?.delegate?.sliderBackgroundColor)
+        // test for custom initial top offset for default implementation
+        XCTAssertEqual(presentedFixedSizeVC.initialTopOffset, panHandler?.estimatedInitialTopOffset)
+
+        // test for maximum top offset for default implementation
+        XCTAssertEqual(presentedFixedSizeVC.finalTopOffset, panHandler?.estimatedFinalTopOffset)
+
+        // test for updated sliderbar for default colour
+        XCTAssertEqual(presentedFixedSizeVC.sliderBackgroundColor, panHandler?.delegate?.sliderBackgroundColor)
     }
 
 }
 
+/// Resizable controller with custom implementation
 class ResizableControllerPositionHandlerMock: UIViewController, ResizableControllerPositionHandler {
     var initialTopOffset: CGFloat {
         500
     }
+
+    var finalTopOffset: CGFloat {
+        200
+    }
+
+    var sliderBackgroundColor: UIColor {
+        UIColor.red.withAlphaComponent(0.5)
+    }
 }
 
+/// Resizable controller with Default implementation
 class FixedSizeControllerPositionHandlerMock: UIViewController, ResizableControllerPositionHandler {
 }
