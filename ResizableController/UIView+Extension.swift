@@ -8,11 +8,13 @@
 import UIKit
 
 extension UIView {
-
+    /// Adds rounded corner to the view
     public func roundedCorners(withRadius radius: CGFloat) {
         layer.cornerRadius = radius
     }
 
+    /// Helper function to layout constraint to edges
+    /// - Parameter insets: Add inset to give padding from different edges
     public func edgesToSuperView(insets: UIEdgeInsets = .zero) {
 
         guard let superView = superview else { return }
@@ -31,7 +33,14 @@ public struct ResizableConstants {
     public static let animationDuration: TimeInterval = 0.3
 }
 
+
 public extension UIViewController {
+
+    /// An overload to implement Resizable Controller model presentation style.
+    /// - Parameters:
+    ///   - viewControllerToPresent: ViewController which conforms to ResizableControllerPositionHandler protocol, Refer to ResizableControllerPositionHandler documentation for use case
+    ///   - animationDuration: Duration for animtion of view controller presenattion. Defaults to 0.3 seconds
+    ///   - completion: Optional parameter to provide additional functionllity after controller is presented.
     func present(_ viewControllerToPresent: ResizableControllerPositionHandler,
                  animationDuration: TimeInterval = 0.3,
                  completion: (() -> Void)? = nil) {
@@ -41,6 +50,8 @@ public extension UIViewController {
     }
 }
 
+
+/// Helper ViewController to layout Resizable Controller Style.
 class ResizableContainerViewController: UIViewController {
     private var transitionAnimator: UIViewControllerTransitioningDelegate?
     init(animationDuration: TimeInterval,
