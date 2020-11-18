@@ -2,6 +2,12 @@
 
 **ResizableController** is the custom model presentation style written in swift.
 
+
+| Dark Mode | Light Mode |
+|:----------|:-----|
+|![BasicFlow](https://user-images.githubusercontent.com/74349937/99520326-fa993d00-29b8-11eb-85cb-b91abbbb81a7.gif)|![DismissFlow_light](https://user-images.githubusercontent.com/74349937/99521441-6def7e80-29ba-11eb-8caf-cd15ffced50e.gif)|
+|![OnTopOfModelPresentation](https://user-images.githubusercontent.com/74349937/99520487-2c120880-29b9-11eb-9208-540650c6ae1e.gif)|![OnModelPresentation](https://user-images.githubusercontent.com/74349937/99521540-8a8bb680-29ba-11eb-8c77-cae890a65f21.gif)|
+
 ## Features
 
 - [X] Resizable View Controller with custom initial/final height.
