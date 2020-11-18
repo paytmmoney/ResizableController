@@ -7,26 +7,38 @@
 
 import UIKit
 
+/// Protocol to integrate Resizable Controller model presentation. To be conformed by the modally presented controller
 public protocol ResizableControllerPositionHandler: UIViewController {
 
     /// Override this property if you do not want to include intuitive slide up indicator. Disabled by default for non-resizable views controllers.
     var shouldShowSlideUpIndication: Bool { get }
 
-    
+    /// Override this property to give differnent colour to Slider up indicator. Defaults to darkGrey with alpha 0.5
     var sliderBackgroundColor: UIColor { get }
 
+    /// Override this property to give initial custom height, calculated from top.
     var initialTopOffset: CGFloat { get }
+
+    /// Override this property to give custom final height, calculated from top. Resizable controller will change its height from initialTopOffset to finalTopOffset.
     var finalTopOffset: CGFloat { get }
 
+    /// Override this property to add behaviours to view controller before it changes it size.
+    /// - Parameter value: new top offset to which view controller will shifted position.
     func willMoveTopOffset(value: CGFloat)
+
+    /// Override this property to add additional behaviours to view controller after it changes it size.
+    /// - Parameter value: new top offset after view controller has shifted position
     func didMoveTopOffset(value: CGFloat)
 }
+
 
 extension ResizableControllerPositionHandler {
     var onView: UIView {
         return self.view
     }
 }
+
+// MARK: Public default Implementation for protocol
 
 public extension ResizableControllerPositionHandler {
 
@@ -55,6 +67,10 @@ public extension ResizableControllerPositionHandler {
     func didMoveTopOffset(value: CGFloat) {}
 }
 
+
+/// This class is responsible for handling swipe related recoganisation.
+/// It provides call backs on to ResizableControllerPositionHandler protocol conformed class once user interacts with the view controller.
+/// Refer to ResizableControllerPositionHandler to see what observations can be subscibed
 class ResizableControllerObserver: NSObject, UIGestureRecognizerDelegate, UIScrollViewDelegate {
 
     private let panGesture = UIPanGestureRecognizer()
@@ -109,6 +125,8 @@ class ResizableControllerObserver: NSObject, UIGestureRecognizerDelegate, UIScro
         self.estimatedInitialTopOffset = delegate?.initialTopOffset ?? ResizableConstants.maximumTopOffset
     }
 
+
+    /// handles user's swipe interactions
     @objc private func handlePan(_ gestureRecognizer: UIGestureRecognizer) {
 
         guard let currentView = panGesture.view,
@@ -138,7 +156,6 @@ class ResizableControllerObserver: NSObject, UIGestureRecognizerDelegate, UIScro
 }
 
 // MARK: PanGesture Delegates
-
 extension ResizableControllerObserver {
 
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -190,6 +207,7 @@ private extension ResizableControllerObserver {
         return Int(view.frame.minY) == Int(estimatedFinalTopOffset)
     }
 
+    /// performs resizable transformation for presented and presenting view controllers
     func translate(value: CGFloat) {
         delegate?.willMoveTopOffset(value: value)
         UIView.animate(withDuration: animationDuration, animations: {
@@ -216,6 +234,7 @@ private extension ResizableControllerObserver {
         }
     }
 
+    /// Scales presenting view controller as per translation
     func presentingViewTransaltion(transaltion: CGFloat) {
         guard let viewController = presentingVC else { return }
         self.viewPosition.toggle(on: self.slideIndicativeView)
@@ -244,6 +263,7 @@ private extension ResizableControllerObserver {
         }
     }
 
+    /// adds slider bar animation
     func addSliderAnimation() {
         let group = CAAnimationGroup()
 
@@ -268,8 +288,7 @@ private extension ResizableControllerObserver {
     }
 }
 
-// MARK: Helper functions
-
+// MARK: Pan helper functions to derive swipe direction
 extension UIPanGestureRecognizer {
     enum DraggingState {
         case upwards, downwards, idle

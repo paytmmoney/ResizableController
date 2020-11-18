@@ -7,10 +7,12 @@
 
 import UIKit
 
+/// Handles presentation cases for all type of presentation
 enum PresentingViewType {
     case custom, `default`, none
 }
 
+/// Manages scaling for presenting view controller
 enum ViewControlerScale {
     case backgroundPopUpScale
     case backgroundFullScreenScale
@@ -28,6 +30,7 @@ enum ViewControlerScale {
     }
 }
 
+/// Provides transitionContext for view controller's custom presentation
 class ResizableAnimatedController: NSObject {
 
     let initialTopOffset: CGFloat
@@ -69,7 +72,6 @@ class ResizableAnimatedController: NSObject {
 }
 
 // MARK: Transitioning Delegate Implementation
-
 extension ResizableAnimatedController: UIViewControllerAnimatedTransitioning {
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -135,6 +137,7 @@ extension ResizableAnimatedController: UIViewControllerAnimatedTransitioning {
     }
 }
 
+// MARK: Helper extension of UIViewController
 extension UIViewController {
     func viewPresentationStyle() -> PresentingViewType {
         if self.modalPresentationStyle == .custom {
