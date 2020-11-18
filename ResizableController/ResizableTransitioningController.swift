@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Manages present and dismiss for custom presented view controller
 class ResizableTransitioningController: NSObject, UIViewControllerTransitioningDelegate {
 
     private let animationDuration: TimeInterval
