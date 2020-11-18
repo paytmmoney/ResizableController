@@ -175,8 +175,8 @@ self.present(viewController)
 
 # Author
 
-Arjun Baru, Paytmoney Ltd, [paytmmoney.com](https://www.paytmmoney.com/)<br>
-You might also want to follow us on Twitter, [@PaytmMoney](https://twitter.com/PaytmMoney)
+**Arjun Baru**, iOS Engineer at Paytmoney Ltd, [paytmmoney.com](https://www.paytmmoney.com/)<br>
+You can reach out to me at **arjun.baru@paytmmoney.com**
 
 # License
 
