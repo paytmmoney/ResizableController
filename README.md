@@ -31,11 +31,7 @@ ResizableController is available through [CocoaPods](http://cocoapods.org). To i
 it, simply add the following line to your Podfile:
 
 ```ruby
-
-source 'git@github.com:paytmmoney/ResizableController.git'
-
-pod 'ResizableController'
-
+pod 'ResizableController', '~> 1.0'
 ```
 
 ### Swift Package Manager
