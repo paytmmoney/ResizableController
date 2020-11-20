@@ -10,8 +10,8 @@
 
 ## Features
 
-- [X] Resizable View Controller with custom initial/final height.
-- [X] Works on all screens and devices supporting iOS 11.0+
+- [X] Resizable View Controller with **custom initial/final height.**
+- [X] Works on all screens and devices supporting **iOS 11.0+**
 - [X] Provides Backward compatibility of iOS 13's automatic presentation style to lower versions.
 - [X] 100% compatible with other presentation styles.
 - [X] Simple to Integrate, merely couple of lines of code.
@@ -74,7 +74,6 @@ Override this property to give differnent colour to Slider up indicator. Default
 Override this property to give initial custom height, calculated from top.
 
 Suggestion: Think about this offset as a topAnchor constraint we apply to a view.
-
 
 ### finalTopOffset:
 
