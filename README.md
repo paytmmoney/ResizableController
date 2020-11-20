@@ -178,6 +178,10 @@ self.present(viewController)
 **Arjun Baru**, iOS Engineer at Paytmoney Ltd, [paytmmoney.com](https://www.paytmmoney.com/)<br>
 You can reach out to me at **arjun.baru@paytmmoney.com**
 
+In collaboration with:
+
+[Shahrukh Alam](https://github.com/shahrukh-alam) & [Rahul Mathur](https://github.com/PaytmMoneyOpenSource)
+
 
 # License
 
