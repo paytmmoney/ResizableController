@@ -1,3 +1,4 @@
+
 ## Overview
 
 **ResizableController** is the custom model presentation style written in swift.
@@ -7,6 +8,7 @@
 |:----------|:-----|
 |![BasicFlow](https://user-images.githubusercontent.com/74349937/99520326-fa993d00-29b8-11eb-85cb-b91abbbb81a7.gif)|![DismissFlow_light](https://user-images.githubusercontent.com/74349937/99521441-6def7e80-29ba-11eb-8caf-cd15ffced50e.gif)|
 |![OnTopOfModelPresentation](https://user-images.githubusercontent.com/74349937/99520487-2c120880-29b9-11eb-9208-540650c6ae1e.gif)|![OnModelPresentation](https://user-images.githubusercontent.com/74349937/99521540-8a8bb680-29ba-11eb-8c77-cae890a65f21.gif)|
+
 
 ## Features
 
@@ -29,9 +31,11 @@ ResizableController is available through [CocoaPods](http://cocoapods.org). To i
 it, simply add the following line to your Podfile:
 
 ```ruby
+
 source 'git@github.com:paytmmoney/ResizableController.git'
 
 pod 'ResizableController'
+
 ```
 
 ### Swift Package Manager
@@ -174,8 +178,10 @@ self.present(viewController)
 
 # Author
 
+
 **Arjun Baru**, iOS Engineer at Paytmoney Ltd, [paytmmoney.com](https://www.paytmmoney.com/)<br>
 You can reach out to me at **arjun.baru@paytmmoney.com**
+
 
 # License
 
@@ -184,6 +190,7 @@ ResizableController is available under the MIT license. See the LICENSE file for
 ## Sample Project
 
 Here is the sample project implementing ResizableController [Sample Project](https://github.com/paytmmoney/ResizableControllerSample)
+
 
 ## Suggestions or feedback?
 
