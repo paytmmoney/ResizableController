@@ -189,7 +189,7 @@ ResizableController is available under the MIT license. See the LICENSE file for
 
 ## Sample Project
 
-Here is the sample project implementing ResizableController [Sample Project](https://github.com/paytmmoney/ResizableControllerSample)
+Here is the sample project implementing ResizableController [Sample Project](https://github.com/paytmmoney/ResizableController/tree/main)
 
 
 ## Suggestions or feedback?
