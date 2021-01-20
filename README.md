@@ -1,3 +1,20 @@
+<p align="center">
+    <img src="Logo.png" alt="ResizableController" />
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/platform-iOS-gold.svg?style=flat" alt="iOS"/>
+    <img src="https://img.shields.io/badge/Swift-5.2-orange.svg"/>
+    <a href="https://cocoapods.org/" target="_blank">
+        <img src="https://img.shields.io/badge/cocoapods-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager"/>
+    </a>
+    <a href="https://swift.org/package-manager" target="_blank">
+        <img src="https://img.shields.io/badge/swiftpm-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager"/>
+    </a>
+    <a href="https://twitter.com/PaytmMoney" target="_blank">
+        <img src="https://img.shields.io/badge/twitter-@PaytmMoney-blue.svg?style=flat" alt="Twitter: @PaytmMoney"/>
+    </a>
+</p>
 
 ## Overview
 
